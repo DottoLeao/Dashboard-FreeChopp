@@ -258,9 +258,12 @@ st.markdown("""
         color: white !important;
     }
     
-    /* === CALENDÁRIO/DATEPICKER - FORÇAR TEXTO ESCURO === */
-    /* Container do popup */
-    div[data-baseweb="popover"],
+    /* === CALENDÁRIO/DATEPICKER - FUNDO BRANCO + TEXTO PRETO === */
+    /* Container do popup - FUNDO BRANCO */
+    div[data-baseweb="popover"] {
+        background-color: #ffffff !important;
+    }
+    
     div[data-baseweb="popover"] *,
     div[data-baseweb="popover"] div,
     div[data-baseweb="popover"] span,
@@ -269,8 +272,11 @@ st.markdown("""
         color: #000000 !important;
     }
     
-    /* Date picker específico */
-    div[data-baseweb="datepicker"],
+    /* Date picker específico - FUNDO BRANCO */
+    div[data-baseweb="datepicker"] {
+        background-color: #ffffff !important;
+    }
+    
     div[data-baseweb="datepicker"] *,
     div[data-baseweb="datepicker"] div,
     div[data-baseweb="datepicker"] span,
@@ -278,8 +284,11 @@ st.markdown("""
         color: #000000 !important;
     }
     
-    /* Calendário */
-    div[data-baseweb="calendar"],
+    /* Calendário - FUNDO BRANCO */
+    div[data-baseweb="calendar"] {
+        background-color: #ffffff !important;
+    }
+    
     div[data-baseweb="calendar"] * {
         color: #000000 !important;
     }
@@ -325,6 +334,7 @@ st.markdown("""
     div[data-baseweb="menu"],
     div[data-baseweb="menu"] * {
         color: #000000 !important;
+        background-color: #ffffff !important;
     }
     
     
