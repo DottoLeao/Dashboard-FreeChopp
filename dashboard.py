@@ -10,9 +10,16 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 import os
 import hashlib
+
+# Fuso horário de Brasília (UTC-3)
+FUSO_BRASILIA = timezone(timedelta(hours=-3))
+
+def hora_brasilia():
+    """Retorna a hora atual no fuso horário de Brasília"""
+    return datetime.now(FUSO_BRASILIA)
 
 # =============================================
 # CONFIGURAÇÃO DE SEGURANÇA
@@ -962,7 +969,7 @@ def main():
     
     with col_header2:
         if st.button("🔄 Atualizar Dados", use_container_width=True):
-            st.session_state['ultima_atualizacao'] = datetime.now()
+            st.session_state['ultima_atualizacao'] = hora_brasilia()
             st.cache_data.clear()
             st.rerun()
     
@@ -1028,7 +1035,7 @@ def main():
         
         # Armazenar hora da última atualização
         if 'ultima_atualizacao' not in st.session_state:
-            st.session_state['ultima_atualizacao'] = datetime.now()
+            st.session_state['ultima_atualizacao'] = hora_brasilia()
         
         st.markdown(f"**Última atualização:** {st.session_state['ultima_atualizacao'].strftime('%d/%m/%Y %H:%M')}")
     
