@@ -243,10 +243,13 @@ st.markdown("""
         color: #ffffff !important;
     }
     
-    /* Date Input - campo principal com texto branco */
-    .stDateInput > div > div > input {
-        color: #ffffff !important;
-        background-color: rgba(255,255,255,0.1) !important;
+    /* Date Input - campo principal com texto PRETO (fundo branco) */
+    .stDateInput input,
+    .stDateInput > div > div > input,
+    .stDateInput [data-baseweb="input"] input,
+    div[data-baseweb="input"] input {
+        color: #000000 !important;
+        background-color: #ffffff !important;
     }
     
     .stSelectbox > div > div,
