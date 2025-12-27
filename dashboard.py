@@ -237,26 +237,64 @@ st.markdown("""
         box-shadow: 0 5px 20px rgba(233, 69, 96, 0.4);
     }
     
-    /* Selectbox e outros inputs - TEXTO BRANCO */
-    .stSelectbox, .stSelectbox > div > div > div:first-child,
-    .stMultiSelect, .stMultiSelect > div > div > div:first-child {
-        color: #ffffff !important;
-    }
+    /* === FILTROS DA SIDEBAR - VISUAL POLIDO === */
     
-    /* Date Input - campo principal com texto PRETO (fundo branco) */
-    .stDateInput input,
-    .stDateInput > div > div > input,
-    .stDateInput [data-baseweb="input"] input,
-    div[data-baseweb="input"] input {
-        color: #000000 !important;
-        background-color: #ffffff !important;
-    }
-    
+    /* Selectbox e Multiselect - Container */
     .stSelectbox > div > div,
     .stMultiSelect > div > div {
-        background-color: rgba(255,255,255,0.1) !important;
+        background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 100%) !important;
+        border: 1px solid rgba(255,255,255,0.2) !important;
+        border-radius: 12px !important;
+        color: white !important;
+        backdrop-filter: blur(5px) !important;
+    }
+    
+    /* Date Input - Campo estilizado */
+    .stDateInput > div > div {
+        background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%) !important;
+        border: 1px solid rgba(233, 69, 96, 0.3) !important;
+        border-radius: 12px !important;
+        overflow: hidden !important;
+    }
+    
+    .stDateInput input {
+        color: #1a1a2e !important;
+        background-color: transparent !important;
+        font-weight: 500 !important;
+    }
+    
+    /* Multiselect - Tags selecionadas */
+    .stMultiSelect [data-baseweb="tag"] {
+        background: linear-gradient(135deg, #e94560 0%, #c73a54 100%) !important;
+        border: none !important;
+        border-radius: 20px !important;
+        color: white !important;
+        padding: 4px 12px !important;
+        margin: 3px !important;
+        font-weight: 500 !important;
+        box-shadow: 0 2px 8px rgba(233, 69, 96, 0.3) !important;
+    }
+    
+    .stMultiSelect [data-baseweb="tag"] span {
         color: white !important;
     }
+    
+    /* Botão X das tags */
+    .stMultiSelect [data-baseweb="tag"] svg {
+        fill: rgba(255,255,255,0.8) !important;
+    }
+    
+    .stMultiSelect [data-baseweb="tag"]:hover {
+        background: linear-gradient(135deg, #ff5a7a 0%, #e94560 100%) !important;
+        transform: scale(1.02);
+    }
+    
+    /* Placeholder e texto do input */
+    .stMultiSelect input::placeholder,
+    .stSelectbox input::placeholder {
+        color: rgba(255,255,255,0.6) !important;
+    }
+    
     
     /* === CALENDÁRIO/DATEPICKER - FUNDO BRANCO + TEXTO PRETO === */
     /* Container do popup - FUNDO BRANCO */
