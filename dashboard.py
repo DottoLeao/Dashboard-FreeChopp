@@ -118,6 +118,15 @@ st.set_page_config(
 # =============================================
 st.markdown("""
 <style>
+    /* ESCONDER MENU SUPERIOR E MANAGE APP */
+    #MainMenu {visibility: hidden;}
+    header {visibility: hidden;}
+    footer {visibility: hidden;}
+    .stDeployButton {display: none;}
+    [data-testid="stToolbar"] {display: none;}
+    [data-testid="stDecoration"] {display: none;}
+    [data-testid="stStatusWidget"] {display: none;}
+    
     /* Tema escuro moderno */
     .stApp {
         background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
