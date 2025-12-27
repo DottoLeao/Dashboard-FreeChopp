@@ -962,6 +962,7 @@ def main():
     
     with col_header2:
         if st.button("🔄 Atualizar Dados", use_container_width=True):
+            st.session_state['ultima_atualizacao'] = datetime.now()
             st.cache_data.clear()
             st.rerun()
     
@@ -1024,7 +1025,12 @@ def main():
         # Info
         st.markdown("### ℹ️ Informações")
         st.markdown(f"**Registros:** {len(df)}")
-        st.markdown(f"**Última atualização:** {datetime.now().strftime('%d/%m/%Y %H:%M')}")
+        
+        # Armazenar hora da última atualização
+        if 'ultima_atualizacao' not in st.session_state:
+            st.session_state['ultima_atualizacao'] = datetime.now()
+        
+        st.markdown(f"**Última atualização:** {st.session_state['ultima_atualizacao'].strftime('%d/%m/%Y %H:%M')}")
     
     # Verificar se há dados após filtros
     if df.empty:
